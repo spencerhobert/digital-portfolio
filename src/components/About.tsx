@@ -44,7 +44,8 @@ const About: React.FC = () => {
     return (
         <Box
             sx={{
-                textAlign: "center"
+                textAlign: "center",
+                alignContent: 'center'
             }}>
             <Typography variant="h3" component="h2" gutterBottom>
                 About Me
@@ -55,7 +56,7 @@ const About: React.FC = () => {
                 src={profilePicture}
                 variant='rounded'
             />
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 4 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 4, width: '80%', mx: 'auto' }}>
                 {aboutMeToHtml}
             </Box>
         </Box>

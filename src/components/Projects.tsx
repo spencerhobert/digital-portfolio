@@ -54,7 +54,8 @@ const Projects: React.FC = () => {
                     gridColumn: 'span 12',
                     '@media (min-width:600px)': { gridColumn: 'span 6' },
                     '@media (min-width:900px)': { gridColumn: 'span 4' },
-                    width: '100%' // This ensures the Grid takes full width
+                    width: '85%', // This ensures the Grid takes full width
+                    mx: 'auto'
                 }}>
                     {/* Make sure the Card has full width */}
                     <Box sx={{ width: '100%', height: '100%' }}>

@@ -57,9 +57,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
 
-      {/* Header stays full width */}
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
       {/* Main content with colored sides */}
       <Box sx={{
         display: 'flex',
