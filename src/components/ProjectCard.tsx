@@ -12,50 +12,55 @@ import { GitHub as GitHubIcon } from '@mui/icons-material';
 interface ProjectCardProps {
     title: string;
     description: string;
-    imageUrl: string;
+    image: string;
+    codeText?: string;
     codeUrl?: string;
-    demoUrl?: string;
+    codeText2?: string;
+    codeUrl2?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     description,
-    imageUrl,
+    image,
+    codeText = "Code",
     codeUrl,
-    demoUrl
+    codeText2,
+    codeUrl2
 }) => {
     return (
         <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CardMedia
                 component="img"
-                height="140"
-                image={imageUrl}
+                height="300"
+                image={image}
                 alt={title}
+                sx={{ objectFit: "cover", objectPosition: "top" }}
             />
-            <CardContent sx={{ flexGrow: 1 }}>
+            <CardContent sx={{ flexGrow: 1, textAlign: "center" }}>
                 <Typography gutterBottom variant="h5" component="h2">
                     {title}
                 </Typography>
                 <Typography>
                     {description}
                 </Typography>
+                <Box
+                    sx={{
+                        p: 2,
+                        pb: 0
+                    }}>
+                    {codeUrl && (
+                        <Button size="small" startIcon={<GitHubIcon />} href={codeUrl} target="_blank">
+                            {codeText}
+                        </Button>
+                    )}
+                    {codeUrl2 && (
+                        <Button size="small" startIcon={<GitHubIcon />} href={codeUrl2} target="_blank" sx={{ pl: 5 }}>
+                            {codeText2}
+                        </Button>
+                    )}
+                </Box>
             </CardContent>
-            <Box
-                sx={{
-                    p: 2,
-                    pt: 0
-                }}>
-                {codeUrl && (
-                    <Button size="small" startIcon={<GitHubIcon />} href={codeUrl} target="_blank">
-                        Code
-                    </Button>
-                )}
-                {demoUrl && (
-                    <Button size="small" color="primary" href={demoUrl} target="_blank">
-                        Demo
-                    </Button>
-                )}
-            </Box>
         </Card>
     );
 };

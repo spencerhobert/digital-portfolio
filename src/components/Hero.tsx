@@ -5,14 +5,17 @@ import {
     Container,
     Typography,
 } from '@mui/material';
+import fallbackHero from "../assets/images/fallback_hero.jpg";
 
 const Hero: React.FC = () => {
     const [backgroundImage, setBackgroundImage] = useState('');
-    const unsplashClientId = import.meta.env.VITE_UNSPLASH_APP_ID;
+    const unsplashClientId = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+
+    const unsplashQuery = "trees"
     
     useEffect(() => {
         // Fetch a random image
-        fetch(`https://api.unsplash.com/photos/random?query=developer&client_id=${unsplashClientId}`)
+        fetch(`https://api.unsplash.com/photos/random?query=${unsplashQuery}&orientation=landscape&client_id=${unsplashClientId}`)
             .then(response => response.json())
             .then(data => {
                 // Set the image URL as the background
@@ -20,8 +23,6 @@ const Hero: React.FC = () => {
             })
             .catch(error => {
                 console.error('Error fetching Unsplash image:', error);
-                // Fallback image if the API call fails
-                setBackgroundImage('https://source.unsplash.com/random?developer');
             });
     }, [unsplashClientId]);
 
@@ -34,7 +35,7 @@ const Hero: React.FC = () => {
                 mb: 4,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundImage: `url(${backgroundImage || 'https://source.unsplash.com/random?developer'})`,
+                backgroundImage: (`url(${backgroundImage})` || fallbackHero),
                 height: '400px',
                 display: 'flex',
                 alignItems: 'center',

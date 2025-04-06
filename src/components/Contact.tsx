@@ -20,18 +20,18 @@ const Contact: React.FC = () => {
             <Typography variant="h3" component="h2" gutterBottom>
                 Get In Touch
             </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 4 }}>
-                <ContactButton
-                    icon={EmailIcon}
-                    href="mailto:spencerhobert@gmail.com"
-                    useTarget={false}
-                    text="Email Me"
-                />
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 2 }}>
                 <ContactButton
                     icon={LinkedInIcon}
                     href="https://www.linkedin.com/in/spencer-hobert/"
                     useTarget={true}
                     text="LinkedIn"
+                />
+                <ContactButton
+                    icon={EmailIcon}
+                    href="mailto:spencerhobert@gmail.com"
+                    useTarget={false}
+                    text="Email"
                 />
                 <ContactButton
                     icon={GitHubIcon}
