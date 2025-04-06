@@ -31,9 +31,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     codeUrl2
 }) => {
     return (
-        <Card sx={{ 
-            height: '100%', 
-            display: 'flex', 
+        <Card sx={{
+            height: '100%',
+            display: 'flex',
             flexDirection: 'column',
             width: '100%',
             maxWidth: '100%'
@@ -43,10 +43,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 height="300"
                 image={image}
                 alt={title}
-                sx={{ objectFit: "cover", objectPosition: "top" }}
+                sx={{
+                    objectFit: "cover",
+                    objectPosition: "top",
+                    width: "100%"
+                }}
             />
-            <CardContent sx={{ 
-                flexGrow: 1, 
+            <CardContent sx={{
+                flexGrow: 1,
                 textAlign: "center",
                 display: 'flex',
                 flexDirection: 'column',

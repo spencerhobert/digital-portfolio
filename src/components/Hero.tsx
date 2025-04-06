@@ -5,7 +5,7 @@ import {
     Container,
     Typography,
 } from '@mui/material';
-import fallbackHero from "../assets/images/fallback_hero.jpg";
+import FallbackHeroImage from "../assets/images/fallback_hero.jpg";
 
 const Hero: React.FC = () => {
     const [backgroundImage, setBackgroundImage] = useState('');
@@ -23,6 +23,7 @@ const Hero: React.FC = () => {
             })
             .catch(error => {
                 console.error('Error fetching Unsplash image:', error);
+                setBackgroundImage(FallbackHeroImage);
             });
     }, [unsplashClientId]);
 
@@ -35,7 +36,7 @@ const Hero: React.FC = () => {
                 mb: 4,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundImage: (`url(${backgroundImage})` || fallbackHero),
+                backgroundImage: (`url(${backgroundImage})` || FallbackHeroImage),
                 height: '400px',
                 display: 'flex',
                 alignItems: 'center',

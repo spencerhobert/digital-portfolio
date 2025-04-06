@@ -48,13 +48,16 @@ const projectsData = [
 
 const Projects: React.FC = () => {
     return (
-        <Box sx={{ my: 8 }}>
-            <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: "center" }}>
-                My Projects
-            </Typography>
-            <Grid container spacing={4}>
-                {projectsData.map((project, index) => 
-                    <Grid key={index} sx={{ gridColumn: 'span 12', '@media (min-width:600px)': { gridColumn: 'span 6' }, '@media (min-width:900px)': { gridColumn: 'span 4' } }}>
+        <Grid container spacing={4}>
+            {projectsData.map((project, index) => (
+                <Grid key={index} sx={{
+                    gridColumn: 'span 12',
+                    '@media (min-width:600px)': { gridColumn: 'span 6' },
+                    '@media (min-width:900px)': { gridColumn: 'span 4' },
+                    width: '100%' // This ensures the Grid takes full width
+                }}>
+                    {/* Make sure the Card has full width */}
+                    <Box sx={{ width: '100%', height: '100%' }}>
                         <ProjectCard
                             title={project.title}
                             description={project.description}
@@ -65,10 +68,10 @@ const Projects: React.FC = () => {
                             codeText2={project.codeText2}
                             codeUrl2={project.codeUrl2}
                         />
-                    </Grid>
-                )}
-            </Grid>
-        </Box>
+                    </Box>
+                </Grid>
+            ))}
+        </Grid>
     );
 };
 
