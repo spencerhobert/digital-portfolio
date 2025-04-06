@@ -12,7 +12,6 @@ declare module '@mui/material/styles' {
   }
 }
 // Import components
-import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -47,11 +46,6 @@ function App() {
       },
     },
   });
-
-  // Toggle dark/light mode
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   return (
     <ThemeProvider theme={theme}>
