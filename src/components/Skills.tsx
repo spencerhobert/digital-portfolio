@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
                 Skills
             </Typography>
             <Typography variant="body1" component="p">
-                React • TypeScript • Material UI • HTML/CSS • JavaScript • Git • Responsive Design
+                C# • TypeScript • Python • HTML • CSS • SQL • React • .NET • ASP.NET MVC • REST API • Django • Pandas • Collaboration • SPRINT Methodology
             </Typography>
         </Box>
     );

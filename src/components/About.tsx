@@ -19,7 +19,6 @@ const AboutMeParagraph: React.FC<AboutMeParagraphProps> = ({
         <Typography
             variant="body1"
             component="p"
-            sx={{ maxWidth: 600 }}
             gutterBottom={isBottom}
         >
             {body}

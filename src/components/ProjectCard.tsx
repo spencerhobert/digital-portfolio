@@ -13,6 +13,7 @@ interface ProjectCardProps {
     title: string;
     description: string;
     image: string;
+    skills: string;
     codeText?: string;
     codeUrl?: string;
     codeText2?: string;
@@ -23,13 +24,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     description,
     image,
-    codeText = "Code",
+    skills,
+    codeText = "GitHub",
     codeUrl,
     codeText2,
     codeUrl2
 }) => {
     return (
-        <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <Card sx={{ 
+            height: '100%', 
+            display: 'flex', 
+            flexDirection: 'column',
+            width: '100%',
+            maxWidth: '100%'
+        }}>
             <CardMedia
                 component="img"
                 height="300"
@@ -37,17 +45,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 alt={title}
                 sx={{ objectFit: "cover", objectPosition: "top" }}
             />
-            <CardContent sx={{ flexGrow: 1, textAlign: "center" }}>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {title}
-                </Typography>
-                <Typography>
-                    {description}
-                </Typography>
+            <CardContent sx={{ 
+                flexGrow: 1, 
+                textAlign: "center",
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+            }}>
+                <Box>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {title}
+                    </Typography>
+                    <Typography gutterBottom>
+                        {description}
+                    </Typography>
+                    <Typography>
+                        {skills}
+                    </Typography>
+                </Box>
                 <Box
                     sx={{
                         p: 2,
-                        pb: 0
+                        pb: 0,
+                        mt: 'auto',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        gap: 2
                     }}>
                     {codeUrl && (
                         <Button size="small" startIcon={<GitHubIcon />} href={codeUrl} target="_blank">
@@ -55,7 +78,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         </Button>
                     )}
                     {codeUrl2 && (
-                        <Button size="small" startIcon={<GitHubIcon />} href={codeUrl2} target="_blank" sx={{ pl: 5 }}>
+                        <Button size="small" startIcon={<GitHubIcon />} href={codeUrl2} target="_blank">
                             {codeText2}
                         </Button>
                     )}
