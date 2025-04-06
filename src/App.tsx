@@ -20,13 +20,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  // State for theme toggle
-  const [darkMode, setDarkMode] = useState(false);
-
   // Create a theme instance
   const theme = createTheme({
     palette: {
-      mode: darkMode ? 'dark' : 'light',
+      mode: 'light',
       primary: {
         main: '#4caf50',
       },
@@ -34,9 +31,9 @@ function App() {
         main: '#1b5e20',
       },
       background: {
-        default: darkMode ? '#121212' : '#f5f5f5',
-        paper: darkMode ? '#1e1e1e' : '#ffffff',
-        sidebar: darkMode ? '#0a0a0a' : '#e0e0e0',
+        default: '#f5f5f5',
+        paper: '#ffffff',
+        sidebar: '#e0e0e0',
       },
       error: {
         main: '#b71c1c',
@@ -67,9 +64,7 @@ function App() {
             width: '100%',
             maxWidth: 'lg',
             // Enhanced shadow effect
-            boxShadow: darkMode
-              ? '0px 0px 20px rgba(0, 0, 0, 0.7), 0px 0px 40px rgba(0, 0, 0, 0.4)'
-              : '0px 4px 20px rgba(0, 0, 0, 0.1), 0px 8px 30px rgba(0, 0, 0, 0.05)',
+            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1), 0px 8px 30px rgba(0, 0, 0, 0.05)',
             position: 'relative',
             zIndex: 1, // Ensures shadow appears above the background
             borderRadius: { xs: 0, md: '8px 8px 0 0' }, // Rounded top corners on medium+ screens
