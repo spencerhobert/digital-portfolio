@@ -67,26 +67,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         {skills}
                     </Typography>
                 </Box>
-                <Box
-                    sx={{
-                        p: 2,
-                        pb: 0,
-                        mt: 'auto',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        gap: 2
-                    }}>
-                    {codeUrl && (
+                {codeUrl && (
+                    <Box
+                        sx={{
+                            p: 2,
+                            pb: 0,
+                            mt: 'auto',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            gap: 2
+                        }}>
                         <Button size="small" startIcon={<GitHubIcon />} href={codeUrl} target="_blank">
                             {codeText}
                         </Button>
-                    )}
-                    {codeUrl2 && (
-                        <Button size="small" startIcon={<GitHubIcon />} href={codeUrl2} target="_blank">
-                            {codeText2}
-                        </Button>
-                    )}
-                </Box>
+                        {codeUrl2 && (
+                            <Button size="small" startIcon={<GitHubIcon />} href={codeUrl2} target="_blank">
+                                {codeText2}
+                            </Button>
+                        )}
+                    </Box>
+                )}
             </CardContent>
         </Card>
     );
