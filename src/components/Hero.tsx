@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
                 left: 0,
                 backgroundColor: 'rgba(0,0,0,.3)'
             }} />
-            <Container sx={{ position: 'relative', textAlign: 'center' }}>
+            <Container sx={{ position: 'relative', textAlign: 'center', textShadow: "0 0 5px black, 0 0 5px black" }}>
                 <Typography component="h1" variant="h2" color="inherit" gutterBottom>
                     Hello, I'm Spencer Hobert
                 </Typography>
