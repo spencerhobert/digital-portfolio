@@ -13,6 +13,7 @@ interface ProjectCardProps {
     title: string;
     description: string;
     image: string;
+    date: string;
     skills: string;
     codeText?: string;
     codeUrl?: string;
@@ -24,6 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     description,
     image,
+    date,
     skills,
     codeText = "GitHub",
     codeUrl,
@@ -57,8 +59,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 justifyContent: 'space-between'
             }}>
                 <Box>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography variant="h5" component="h2">
                         {title}
+                    </Typography>
+                    <Typography variant="subtitle1" color="text.secondary">
+                        {date}
                     </Typography>
                     <Typography gutterBottom>
                         {description}
