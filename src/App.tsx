@@ -18,6 +18,8 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import { Analytics } from "@vercel/analytics/react"
+
 function App() {
   // Create a theme instance
   const theme = createTheme({
@@ -84,6 +86,8 @@ function App() {
         {/* Right colored padding */}
         <Box sx={{ flexGrow: 1 }} />
       </Box>
+      {/* Vercel Analytics */}
+      <Analytics />
     </ThemeProvider>
   );
 }
