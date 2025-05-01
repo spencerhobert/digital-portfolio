@@ -28,10 +28,7 @@ const projectsData = [
         image: AcesFrontendPicture,
         date: "Jan 2025 - Apr 2025",
         skills: 'React • TypeScript • C# • .NET • REST API • Critical Thinking • Collaboration',
-        codeText: 'Frontend',
-        codeUrl: 'https://github.com/PineappleBlaster/ACES-Frontend',
-        codeText2: 'Backend',
-        codeUrl2: 'https://github.com/PineappleBlaster/ACES-Backend'
+        codeUrl: 'https://github.com/bradleypeterson/ACES3',
     },
     {
         title: 'Digital Portfolio',
