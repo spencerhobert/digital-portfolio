@@ -75,10 +75,7 @@ const Projects: React.FC = () => {
                             image={project.image}
                             date={project.date}
                             skills={project.skills}
-                            codeText={project.codeText}
                             codeUrl={project.codeUrl}
-                            codeText2={project.codeText2}
-                            codeUrl2={project.codeUrl2}
                         />
                     </Box>
                 </Grid>
