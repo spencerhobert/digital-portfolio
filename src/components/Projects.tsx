@@ -28,10 +28,7 @@ const projectsData = [
         image: AcesFrontendPicture,
         date: "Jan 2025 - Apr 2025",
         skills: 'React • TypeScript • C# • .NET • REST API • Critical Thinking • Collaboration',
-        codeText: 'Frontend',
-        codeUrl: 'https://github.com/PineappleBlaster/ACES-Frontend',
-        codeText2: 'Backend',
-        codeUrl2: 'https://github.com/PineappleBlaster/ACES-Backend'
+        codeUrl: 'https://github.com/bradleypeterson/ACES3',
     },
     {
         title: 'Digital Portfolio',
@@ -78,10 +75,7 @@ const Projects: React.FC = () => {
                             image={project.image}
                             date={project.date}
                             skills={project.skills}
-                            codeText={project.codeText}
                             codeUrl={project.codeUrl}
-                            codeText2={project.codeText2}
-                            codeUrl2={project.codeUrl2}
                         />
                     </Box>
                 </Grid>
