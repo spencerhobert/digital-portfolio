@@ -1,10 +1,12 @@
 import React from 'react';
 import {
     Box,
-    Grid
+    Typography,
+    Container
 } from '@mui/material';
 
 import ProjectCard from './ProjectCard';
+import AnimatedElement from './AnimatedElement';
 
 /* Images */
 import DdsPicture from '../assets/images/codeProjects/dds_temp.jpg'
@@ -58,29 +60,58 @@ const projectsData = [
 
 const Projects: React.FC = () => {
     return (
-        <Grid container spacing={4}>
-            {projectsData.map((project, index) => (
-                <Grid key={index} sx={{
-                    gridColumn: 'span 12',
-                    '@media (min-width:600px)': { gridColumn: 'span 6' },
-                    '@media (min-width:900px)': { gridColumn: 'span 4' },
-                    width: '85%', // This ensures the Grid takes full width
-                    mx: 'auto'
-                }}>
-                    {/* Make sure the Card has full width */}
-                    <Box sx={{ width: '100%', height: '100%' }}>
-                        <ProjectCard
-                            title={project.title}
-                            description={project.description}
-                            image={project.image}
-                            date={project.date}
-                            skills={project.skills}
-                            codeUrl={project.codeUrl}
-                        />
-                    </Box>
-                </Grid>
-            ))}
-        </Grid>
+        <Box id="projects" sx={{ py: 8 }}>
+            <Container maxWidth="lg">
+                <AnimatedElement type="fade" duration={800}>
+                    <Typography
+                        variant="h3"
+                        component="h2"
+                        gutterBottom
+                        align="center"
+                        sx={{
+                            mb: 6,
+                            position: 'relative',
+                            '&::after': {
+                                content: '""',
+                                display: 'block',
+                                width: '80px',
+                                height: '4px',
+                                backgroundColor: 'primary.main',
+                                margin: '16px auto',
+                                borderRadius: '2px'
+                            }
+                        }}
+                    >
+                        My Projects
+                    </Typography>
+                </AnimatedElement>
+
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }, gap: 4 }}>
+                    {projectsData.map((project, index) => (
+                        <Box
+                            key={index}
+                            sx={{ mb: 4 }}
+                        >
+                            <AnimatedElement
+                                type="slide"
+                                slideDirection="up"
+                                delay={index * 200}
+                                duration={600}
+                            >
+                                <ProjectCard
+                                    title={project.title}
+                                    description={project.description}
+                                    image={project.image}
+                                    date={project.date}
+                                    skills={project.skills}
+                                    codeUrl={project.codeUrl}
+                                />
+                            </AnimatedElement>
+                        </Box>
+                    ))}
+                </Box>
+            </Container>
+        </Box>
     );
 };
 
